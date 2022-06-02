@@ -23,18 +23,11 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Sync and merge upstream repository with your current repository
-  # You may pin to the exact commit or the version.
-  # uses: dabreadman/sync-upstream-repo@f61088b9adb9220c5d518a405cd1ab52c0500e4d
-        uses: dabreadman/sync-upstream-repo@v1.2.0.b
+      - name: Fork Sync
+        # You may pin to the exact commit or the version.
+        # uses: tgymnich/fork-sync@0cc6ac48fd51415e7c34e5b8823021bc952a5f5f
+        uses: tgymnich/fork-sync@v1.2.1
         with:
-          # URL of gitHub public upstream repo
-          upstream_repo: https://github.com/alexandresanlim/Badges4-README.md-Profile
-          # Branch to merge from upstream (defaults to downstream branch)
-          upstream_branch: master
-          # Branch to merge into downstream
-          downstream_branch: master
-          # GitHub Bot token
-          token: ${{secrets.TOKEN}}
-          # Git merge arguments
+          # Token for the github API
+          github_token: ${{ secrets.TOKEN }}
          
